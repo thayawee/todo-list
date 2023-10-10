@@ -105,7 +105,11 @@ const TodoForm = () => {
   return (
     <div className="todo-container flex flex-col gap-[10px] w-[800px] p-[20px] ">
       {/* form add new todo */}
-      <img src="/swinging-doodle.svg" alt="svg" />
+      <img
+        className="w-[550px] m-auto"
+        src="/swinging-doodle.svg"
+        alt="image"
+      />
       <h1 className="font-bold text-[26px] tracking-[10px] my-[20px] animate-jump-in">
         MY TODO LIST
       </h1>
