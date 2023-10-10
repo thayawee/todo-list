@@ -1,4 +1,4 @@
-import { FormEvent, Fragment, useState } from "react";
+import { FormEvent, Fragment, useEffect, useState } from "react";
 import TodoCard from "./TodoCard";
 import EditTodo from "./EditTodo";
 import DeleteTodo from "./DeleteTodo";
@@ -12,8 +12,16 @@ type Todo = {
 };
 
 const TodoForm = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
   const [todo, setTodo] = useState<string>("");
+  const [todos, setTodos] = useState<Todo[]>(() => {
+    const savedItem = localStorage.getItem("todos");
+    const parsedItem = JSON.parse(savedItem || "");
+    return parsedItem || [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const handleAdd = (e: FormEvent) => {
     // prevent page refresh
