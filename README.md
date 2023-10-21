@@ -1,4 +1,7 @@
-### React + TypeScript + Vite
+### Todo App
+
+<img width="860" alt="todo_app" src="https://github.com/thayawee/todo-list/assets/134253693/3da63c54-4832-4a6d-b767-c840aa8ccee3">
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
